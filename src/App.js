@@ -28,6 +28,18 @@ function App() {
     fetchData();
   }, []);
 
+  // Button style
+  const buttonStyle = {
+    backgroundColor: "teal",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    padding: "8px 16px",
+    margin: "0 5px",
+    cursor: "pointer",
+    fontWeight: "bold",
+  };
+
   // Pagination Logic
   const totalPages = Math.ceil(employees.length / rowsPerPage);
   const indexOfLast = currentPage * rowsPerPage;
@@ -84,15 +96,15 @@ function App() {
         <button
           onClick={handlePrevious}
           disabled={currentPage === 1}
-          style={{ backgroundColor: "teal", color: "white" }}
+          style={buttonStyle}
         >
           Previous
         </button>
-        <span style={{ margin: "0 15px" }}>{currentPage}</span>
+        <span style={buttonStyle}>{currentPage}</span>
         <button
           onClick={handleNext}
           disabled={currentPage === totalPages}
-          style={{ backgroundColor: "teal", color: "white" }}
+          style={buttonStyle}
         >
           Next
         </button>
