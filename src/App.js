@@ -95,7 +95,7 @@ function App() {
       <div style={{ marginTop: "20px", textAlign: "center" }}>
         <button
           onClick={handlePrevious}
-          disabled={currentPage === 1}
+          disabled={currentPage <= 1}
           style={buttonStyle}
         >
           Previous
@@ -103,7 +103,7 @@ function App() {
         <span style={buttonStyle}>{currentPage}</span>
         <button
           onClick={handleNext}
-          disabled={currentPage === totalPages}
+          disabled={currentPage >= totalPages}
           style={buttonStyle}
         >
           Next
